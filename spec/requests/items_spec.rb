@@ -2,6 +2,11 @@ require 'rails_helper'
 
 RSpec.describe "Items", type: :request do
   describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+    before { create (:item) }
+
+    it do
+      get '/items'
+      expect(response).to be_ok
+    end
   end
 end
